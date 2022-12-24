@@ -1,5 +1,10 @@
 import os
 import csv
+import helpers
+
+
+from datetime import date
+
 
 def list_files(root_dir):
     file_list = []
@@ -22,14 +27,15 @@ def list_files(root_dir):
     return file_list
 
 def write_to_csv(file_list, csv_file):
-    with open(csv_file, "w", newline="") as f:
+    with open(csv_file  + f"\output-{date.today()}.csv", "w+", newline="") as f:
         writer = csv.writer(f)
         # Add a header row
         writer.writerow(["Filename", "Client Name", "Week Number", "Delivery Number", "Path"])
         writer.writerows(file_list)
 
-root_dir = r'C:\Users\mega\Documents\sandbox\list-files-in-excel\drive-download-20221224T164507Z-002'
-csv_file = r'C:\Users\mega\Documents\sandbox\list-files-in-excel\output\output.csv'
+root_dir = helpers.read_txt_file("input_folder.txt")
+csv_file = helpers.read_txt_file("csv_file_path.txt")
+
 
 file_list = list_files(root_dir)
 write_to_csv(file_list, csv_file)
