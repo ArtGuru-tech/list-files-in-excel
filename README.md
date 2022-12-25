@@ -2,31 +2,35 @@
  
 # List Files
 
-This Python script lists all the files in a folder and its subfolders, and writes the names of the files to a CSV file.
+Ce script Python liste tous les fichiers dans un dossier et ses sous-dossiers et écrit les noms des fichiers dans un fichier CSV.
+Le fichier CSV contiendra des colonnes faisant référence au nom du client, à la semaine de livraison, au numéro de livraison et au chemin relatif vers le fichier.
 
-## Requirements
 
-- Python 3.x
-- CSV module (for creating an Excel file) or csv (for creating a CSV file)
+## Exigences
+
+- Python 3.8.2
+- Module CSV (pour créer un fichier Excel) ou csv (pour créer un fichier CSV)
 
 ## Installation
 
-1. Clone or download the project from GitHub.
-2. Install Python 3.x from [python.org](https://www.python.org/downloads/).
-3. Install the required modules by running `pip install -r requirements.txt`.
+1. Clonez ou téléchargez le projet sur GitHub.
+2. Installez Python 3.x depuis python.org.
+3. Installez les modules requis en exécutant pip install -r requirements.txt.
 
 ## Usage
 
-1. Open the script in a text editor and specify the root directory and output file path.
-2. Run the script using Python: `python list_files.py`
+1. Spécifiez le chemin du dossier d'entrée dans le fichier "input_folder.txt", en enlevant tout slash de fin ou le programme ne fonctionnera pas.
+2. Spécifiez le chemin du dossier de sortie où vous voulez que votre fichier CSV apparaisse.
+3. Exécutez le script en utilisant Python : python main.py
 
 ## Executable
 
-To create a standalone executable file (`.exe`), you can use a tool called PyInstaller.
+Pour créer un fichier exécutable autonome (.exe), vous pouvez utiliser un outil appelé PyInstaller.
+Des modifications du script doivent être apportées pour que l'installation autonome fonctionne.
 
-1. Install PyInstaller by running `pip install pyinstaller`.
-2. Run `pyinstaller list_files.py` to create an executable file in the `dist` folder.
+1. Installez PyInstaller en exécutant pip install pyinstaller.
+2. Exécutez pyinstaller main.py pour créer un fichier exécutable dans le dossier dist.
 
 ## License
 
-This project is licensed under the MIT License.
+Ce projet est sous licence MIT.
